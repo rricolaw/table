@@ -7,6 +7,21 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.version'
 ]).
+
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider
+      .when('/', {
+        controller:'wordController',
+        templateUrl:'view1/view1.html'
+      })
+
+      .when('/view2/', {
+        controller:'',
+        templateUrl: '/view2/view2.html'
+
+      })
+
+      .otherwise( {redirectTo: '/'});
+
+
 }]);
